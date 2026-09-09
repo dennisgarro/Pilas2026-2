@@ -36,13 +36,13 @@ public class Metodos {
         System.out.println("Ingrese el Numero a eliminar");
         int numero = m.ValidarEentero(sc);
         Stack<Obj> pilaaux = new Stack<>();
-        for (Obj o : pila) {
-            if (o.getNumero() == numero) {
-                System.out.println("registro eliminado");
-            } else {
-                pilaaux.push(o);
-                pila.pop();
-            }
+        while (!pila.isEmpty()){
+            Obj o=pila.pop();
+                if(o.getNumero()==numero){
+                    System.out.println("registro eliminado");
+                }else{
+                    pilaaux.push(o);
+                }
         }
         while (!pilaaux.isEmpty()) {
             pila.push(pilaaux.pop());
